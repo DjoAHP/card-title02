@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Btn-custom-Widget</title>
+</head>
+
+<body>
+
+    <div class="card-wrap">
+        <div class="card">
+            <div class="border-wrap"></div>
+            <div class="content">
+                <div>
+                    <h2>Fiches Comptes</h2>
+                    <p>Commun</p>
+                    <img src="/grappe01.jpg" />
+                    <a href="https://tips.vjy.me" target="_blank">2024</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: "Inter", sans-serif;
+        }
+
+        .card-wrap {
+            width: 300px;
+            height: 380px;
+            perspective: 800px;
+            position: relative;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            background: rgba(128, 128, 128, 0.3);
+            background-blend-mode: luminosity;
+            backdrop-filter: blur(45px);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card::before {
+            content: "";
+            pointer-events: none;
+            user-select: none;
+            position: absolute;
+            inset: 0px;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(156.52deg,
+                    rgba(255, 255, 255, 0.4) 2.12%,
+                    rgba(255, 255, 255, 0.0001) 39%,
+                    rgba(255, 255, 255, 0.0001) 54.33%,
+                    rgba(255, 255, 255, 0.1) 93.02%);
+            mask: linear-gradient(black, black) content-box,
+                linear-gradient(black, black);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .border-wrap {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 15px;
+            pointer-events: none;
+            transition: background-image 0.2s;
+        }
+
+        .content {
+            color: #fff;
+            height: 100%;
+            display: block;
+
+        }
+
+        .content div {
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            position: relative;
+            justify-content: space-between;
+        }
+
+        a {
+            font-size: 14px;
+            text-align: center;
+            border-radius: 20px;
+            padding: 8px 20px;
+            color: rgba(255, 255, 255, 0.96);
+            margin-top: 12px;
+            text-decoration: none;
+            background: linear-gradient(0deg,
+                    rgba(94, 94, 94, 0.07),
+                    rgba(94, 94, 94, 0.08)),
+                rgba(255, 255, 255, 0.08);
+            background-blend-mode: color-dodge, lighten;
+            display: block;
+            bottom: 0;
+        }
+
+        h2 {
+            margin: 4px 0;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 4px;
+        }
+
+        img {
+            border-radius: 12px;
+        }
+    </style>
+
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+
+
+
+</html>
